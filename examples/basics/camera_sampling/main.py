@@ -26,7 +26,7 @@ for i in range(5):
     location = np.random.uniform([-10, -10, 8], [10, 10, 12])
     # Compute rotation based on vector going from location towards poi
     rotation_matrix = bproc.camera.rotation_from_forward_vec(poi - location, inplane_rot=np.random.uniform(-0.7854, 0.7854))
-    # Add homog cam pose based on location an rotation
+    # Add homog cam pose based on location and rotation
     cam2world_matrix = bproc.math.build_transformation_mat(location, rotation_matrix)
     bproc.camera.add_camera_pose(cam2world_matrix)
 
